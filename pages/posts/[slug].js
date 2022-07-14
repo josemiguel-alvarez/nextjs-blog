@@ -28,8 +28,14 @@ export default function Post({ post, morePosts, preview }) {
             <article className="mb-32">
               <Head>
                 <title>{post.title}</title>
-                <meta property="og:image" content={post.ogImage.url} />
-                <meta property="og:url" content={router.asPath} />
+                <meta
+                  property="og:image"
+                  content={`https://www.jmalvarez.dev${post.ogImage.url}`}
+                />
+                <meta
+                  property="og:url"
+                  content={`https://www.jmalvarez.dev${router.asPath}`}
+                />
                 <meta property="og:title" content={post.title} />
                 <meta property="og:description" content={post.excerpt} />
               </Head>
