@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+}
+
+.container pre {
+  border-radius: 10px;
+  font-size: 0.8em;
+}

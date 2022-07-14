@@ -16,3 +16,12 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown a {
+  color: #764abc;
+}
+
+.markdown a:hover {
+  background-color: #edda0e;
+  color: #000;
+}
