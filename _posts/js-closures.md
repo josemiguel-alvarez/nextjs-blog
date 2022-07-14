@@ -70,4 +70,6 @@ otherFunc(); // 15
 
 Notice how `otherFunc` has access to `newFunc` in this last example to see the difference.
 
-Source: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+### Resources
+
+\- [Closures - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
