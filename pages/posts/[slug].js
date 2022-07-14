@@ -38,13 +38,9 @@ export default function Post({ post, morePosts, preview }) {
               <PostBody>
                 <ReactMarkdown
                   components={{
-                    code: (props) => {
-                      return props.className ? (
-                        <Code {...props} />
-                      ) : (
-                        <code {...props} />
-                      );
-                    },
+                    code: (props) => (
+                      <Code className={props.className}>{props.children}</Code>
+                    ),
                   }}
                 >
                   {post.content}
