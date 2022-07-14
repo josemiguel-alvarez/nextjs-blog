@@ -16,6 +16,7 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -28,6 +29,9 @@ export default function Post({ post, morePosts, preview }) {
               <Head>
                 <title>{post.title}</title>
                 <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:url" content={router.asPath} />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt} />
               </Head>
               <PostHeader
                 title={post.title}
@@ -63,6 +67,7 @@ export async function getStaticProps({ params }) {
     "content",
     "ogImage",
     "coverImage",
+    "excerpt",
   ]);
   const content = post.content || "";
 

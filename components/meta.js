@@ -25,6 +25,10 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content="José Miguel Álvarez personal blog." />
+
+      <meta name="twitter:card" content="summary"></meta>
+      <meta name="twitter:site" content="@jmalvarez_dev"></meta>
+      <meta name="twitter:creator" content="@jmalvarez_dev"></meta>
     </Head>
   );
 }
