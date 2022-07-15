@@ -28,6 +28,7 @@ export default function Post({ post, preview }) {
             <article className="mb-32">
               <Head>
                 <title>{post.title}</title>
+                <meta name="description" content={post.excerpt} />
                 <meta
                   property="og:image"
                   content={`https://www.jmalvarez.dev${post.ogImage.url}`}
