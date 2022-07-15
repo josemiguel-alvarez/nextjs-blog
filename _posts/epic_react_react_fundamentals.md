@@ -20,9 +20,8 @@ JavaScript programs are separated into **modules**. Modern browsers support modu
 
 ### Exercise 2
 
-\- **Imperative** programming: **How** to do something.
-
-\- **Declarative** programming: **What** to do.
+- **Imperative** programming: **How** to do something.
+- **Declarative** programming: **What** to do.
 
 **React** is used to create elements. **ReactDOM** is used to render these elements in the DOM.
 
@@ -60,4 +59,4 @@ The best solution is to use a key which is unique to each component.
 
 ### Resources
 
-\- [Epic React by Kent C. Odds](https://epicreact.dev)
+- [Epic React by Kent C. Odds](https://epicreact.dev)

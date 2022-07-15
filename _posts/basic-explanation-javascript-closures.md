@@ -72,4 +72,4 @@ Notice how `otherFunc` has access to `newFunc` in this last example to see the d
 
 ### Resources
 
-\- [Closures - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+- [Closures - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
