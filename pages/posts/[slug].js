@@ -52,6 +52,11 @@ export default function Post({ post, preview }) {
                     code: (props) => (
                       <Code className={props.className}>{props.children}</Code>
                     ),
+                    a: (props) => (
+                      <a href={props.href} target="_blank">
+                        {props.children}
+                      </a>
+                    ),
                   }}
                 >
                   {post.content}
