@@ -1,7 +1,6 @@
 {
-  "name": "tailwind-nextjs-starter-blog",
-  "version": "1.5.6",
-  "private": true,
+  "name": "nextjs-blog",
+  "version": "1.0.0",
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
@@ -39,7 +38,7 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "sharp": "^0.30.5",
-    "tailwindcss": "^3.0.23",
+    "tailwindcss": "^3.1.6",
     "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
