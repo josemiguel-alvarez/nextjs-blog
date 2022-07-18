@@ -6,6 +6,8 @@ tags: ["react"]
 draft: false
 ---
 
+<TOCInline toc={props.toc} asDisclosure />
+
 ### Exercise 1
 
 The **Document Object Model (DOM)** is a programming interface for web documents. It makes it possible for programming languages to interact with it.

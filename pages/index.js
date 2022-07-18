@@ -4,7 +4,7 @@ import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import formatDate from "@/lib/utils/formatDate";
-
+import Image from "@/components/Image";
 import NewsletterForm from "@/components/NewsletterForm";
 
 const MAX_DISPLAY = 5;
@@ -24,9 +24,18 @@ export default function Home({ posts }) {
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-1 md:space-y-5">
-          <h1 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-            Hi, I'm José Miguel Álvarez Vañó 👋
-          </h1>
+          <div className="mb-4 flex items-center">
+            <Image
+              src="/static/images/avatar.jpeg"
+              width="75px"
+              height="75px"
+              alt="avatar"
+              className="h-10 w-10 rounded-full"
+            />
+            <h1 className="ml-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+              José Miguel Álvarez Vañó
+            </h1>
+          </div>
           <p className="pb-6 text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
@@ -39,7 +48,7 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter;
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="py-12 hover:bg-neutral-800">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
@@ -71,7 +80,7 @@ export default function Home({ posts }) {
                       </div>
                       <div className="text-base font-medium leading-6">
                         <Link
-                          href={`/blog/${slug}`}
+                          href={`/posts/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >

@@ -3,7 +3,7 @@ const siteMetadata = {
   author: "José Miguel Álvarez Vañó",
   headerTitle: "jmalvarez.dev",
   description:
-    "I'm a Software Engineer @ Shopify. You can find here technical content of things that I've learned and found interesting.",
+    "I'm a Software Engineer @ Shopify. Here you can find technical content of things that I've learned and found interesting.",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://www.jmalvarez.dev",

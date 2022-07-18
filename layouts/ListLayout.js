@@ -59,7 +59,7 @@ export default function ListLayout({
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter;
             return (
-              <li key={slug} className="py-4">
+              <li key={slug} className="py-4 hover:bg-neutral-800">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>

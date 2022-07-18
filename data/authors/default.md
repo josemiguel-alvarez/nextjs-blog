@@ -9,4 +9,4 @@ linkedin: https://linkedin.com/in/jmalvarezvano
 github: https://github.com/josemiguel-alvarez
 ---
 
-I'm a Software Engineer @ Shopify. You can find here technical content of things that I've learned and found interesting.
+I'm a Software Engineer @ Shopify. More than 5 years of experience developing software. International working experience, mainly in the Swiss and Spanish banking sector. Full-Stack knowledge with a focus on web development. Interested in new technologies and cybersecurity.

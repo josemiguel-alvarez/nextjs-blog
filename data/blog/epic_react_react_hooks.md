@@ -6,6 +6,8 @@ tags: ["react", "react hooks"]
 draft: false
 ---
 
+<TOCInline toc={props.toc} asDisclosure />
+
 ### Intro
 
 Why React hooks?
@@ -25,7 +27,7 @@ React hooks add interactivity to our functional components.
 
 `useState` hook accepts as first argument the initial value of the state. What is passed as initial value **is executed on every render**. That means that if the initial value is an expensive calculation, it will be executed on every render. `useState` accepts that the initial value is a function and, in that case, React will execute it **only once**. This is called **lazy initialization**.
 
-```js
+```js showLineNumbers
 // ❌ Executed on every render, bad performance
 React.useState(someExpensiveComputation());
 
@@ -35,7 +37,7 @@ React.useState(() => someExpensiveComputation());
 
 The `setSate` function returned by `useState` accepts an argument which can be a value or a function. If the new state has to be calculated based on the previous state, a function has to be given to be sure that the correct value is applied.
 
-```js
+```js showLineNumbers
 // ✅ Correct
 setCount((previousCount) => previousCount + 1);
 
@@ -49,7 +51,7 @@ A **custom hook** is a function which calls other hooks.
 
 React only renders a component when it is going to be displayed/painted in the browser. In the following example the Child component will never be rendered.
 
-```jsx
+```jsx showLineNumbers
 const Child = () => {
   console.log("Child render");
   return <div>Child</div>;
@@ -70,7 +72,7 @@ const App = () => {
 
 But in the next example it does:
 
-```jsx
+```jsx showLineNumbers
 const Child = () => {
   console.log("Child render");
   return <div>Child</div>;
