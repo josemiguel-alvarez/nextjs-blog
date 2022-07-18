@@ -11,6 +11,8 @@ import {
   ListWithId,
 } from "@/components/posts/how-react-keys-work/basic-list";
 
+<TOCInline toc={props.toc} asDisclosure />
+
 ### Why is the "key" prop needed?
 
 The `key` prop is the only thing React can use to identify components in the DOM when they are
@@ -35,7 +37,7 @@ to see the effect of using the index as key.
 
 We have the following array:
 
-```json
+```json showLineNumbers
 [
   {
     "text": "Item A"
@@ -51,7 +53,7 @@ We have the following array:
 
 And we are mapping it to React components using the index as the key.
 
-```jsx
+```jsx showLineNumbers
 items.map((item, index) => (
   <div key={index}>
     <label>
@@ -87,7 +89,7 @@ this way.
 
 We've now provided a unique ID to each element in the array.
 
-```json
+```json showLineNumbers
 [
   {
     "id": "item-a",
@@ -106,7 +108,7 @@ We've now provided a unique ID to each element in the array.
 
 And we are using it as the key.
 
-```jsx
+```jsx showLineNumbers
 items.map((item, index) => (
   <div key={item.id}>
     <label>

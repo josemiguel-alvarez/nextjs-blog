@@ -6,6 +6,8 @@ tags: ["react", "react hooks"]
 draft: false
 ---
 
+<TOCInline toc={props.toc} asDisclosure />
+
 ### Exercise 1
 
 When should I use `useState`?  
@@ -24,7 +26,7 @@ The caching strategy React has adopted has a size of 1. That is, they *only* ke
 
 React builds a tree in an object which keeps track of the hooks, that’s how React knows which hook was called and can return the correct values. Example of the tree:
 
-```js
+```js showLineNumbers
 {
  state: 0,
  dispatcher: ReactDispatcher.someFunction
@@ -54,7 +56,7 @@ When to use...
 
 `forwardRef` can be used to forward a reference to a DOM component which is rendered in one the children components.
 
-```jsx
+```jsx showLineNumbers
 const MyInput = forwardRef((props, ref) => {
   return <input ref={ref} />;
 });
@@ -72,7 +74,7 @@ const App = () => {
 
 We could also expose imperative methods:
 
-```jsx
+```jsx showLineNumbers
 const MyInput = forwardRef((props, ref) => {
   const inputRef = React.useRef();
   ref.current = {
@@ -95,7 +97,7 @@ const App = () => {
 
 But, instead of manipulating directly the ref, React has a hook called `useImperativeHandle` which does this for us:
 
-```jsx
+```jsx showLineNumbers
 const MyInput = forwardRef((props, ref) => {
   const inputRef = React.useRef();
 
@@ -121,7 +123,7 @@ const App = () => {
 
 `useDebugValue` makes it possible to provide extra information of a custom hook in the **React Dev Tools**. It only works inside custom hooks.
 
-```js
+```js showLineNumbers
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
 

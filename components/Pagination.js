@@ -19,7 +19,9 @@ export default function Pagination({ totalPages, currentPage }) {
         {prevPage && (
           <Link
             href={
-              currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`
+              currentPage - 1 === 1
+                ? `/blog/`
+                : `/posts/page/${currentPage - 1}`
             }
           >
             <button rel="previous">Previous</button>
@@ -38,7 +40,7 @@ export default function Pagination({ totalPages, currentPage }) {
           </button>
         )}
         {nextPage && (
-          <Link href={`/blog/page/${currentPage + 1}`}>
+          <Link href={`/posts/page/${currentPage + 1}`}>
             <button rel="next">Next</button>
           </Link>
         )}

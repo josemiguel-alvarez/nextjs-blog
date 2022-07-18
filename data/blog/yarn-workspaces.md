@@ -6,6 +6,8 @@ tags: ["yarn", "monorepo"]
 draft: false
 ---
 
+<TOCInline toc={props.toc} asDisclosure />
+
 A monorepo is a repository that contains multiple projects inside of it. For example, a monorepo could contain a frontend app and a backend app. Inside the project there could also be shared libraries. In monorepos it is very easy to make changes to multiple projects at one time.
 
 A monorepo is not the same as a monolith. When you make a change in a monorepo you only have to rebuild the projects that are affected by the change. This is an important point because it lets the teams work independently and improve the developer experience. In a monolith everything is released together. In a monorepo you have flexibility to decide when and what to release.
@@ -75,7 +77,7 @@ If we wanted to execute the same command in every workspace we could do it with 
 yarn workspaces run test
 ```
 
-### Resources
+## Resources
 
 - [Yarn Workspaces](https://yarnpkg.com/features/workspaces)
 - [yarn workspaces | Yarn](https://classic.yarnpkg.com/en/docs/cli/workspaces)

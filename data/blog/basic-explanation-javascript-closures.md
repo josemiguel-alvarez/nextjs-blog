@@ -8,7 +8,7 @@ draft: false
 
 In JavaScript a **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). This means that **a function will have access to its outer context**.
 
-```js
+```js showLineNumbers
 function makeFunc() {
   const x = 10;
   function newFunc() {
@@ -24,7 +24,7 @@ newFunc(); // 15
 
 In the previous example `newFunc` has access to the variable `x`. The closure is giving `newFunc` access to its outer context and `x` is defined there.
 
-```js
+```js showLineNumbers
 function makeFunc() {
   const x = 10;
   function newFunc() {
@@ -45,7 +45,7 @@ otherFunc(); // ReferenceError: y is not defined
 
 In this example we get an error because `y` is defined inside `newFunc` and not in its outer context.
 
-```js
+```js showLineNumbers
 function makeFunc() {
   const x = 10;
   function newFunc() {
