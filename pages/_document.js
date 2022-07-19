@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
@@ -39,6 +39,11 @@ class MyDocument extends Document {
             content="#000"
           />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
+            rel="stylesheet"
+          />
         </Head>
         <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
           <Main />
