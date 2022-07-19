@@ -1,11 +1,11 @@
+import Image from "@/components/Image";
 import Link from "@/components/Link";
+import NewsletterForm from "@/components/NewsletterForm";
 import { PageSEO } from "@/components/SEO";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import formatDate from "@/lib/utils/formatDate";
-import Image from "@/components/Image";
-import NewsletterForm from "@/components/NewsletterForm";
 
 const MAX_DISPLAY = 5;
 
@@ -48,7 +48,10 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter;
             return (
-              <li key={slug} className="py-12 hover:bg-neutral-800">
+              <li
+                key={slug}
+                className="py-12 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+              >
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>

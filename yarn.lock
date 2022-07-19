@@ -1072,11 +1072,6 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
-"@fontsource/inter@4.5.2":
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.2.tgz#f21a1b39e9fc40fd7f315f37687ad6f6f040528a"
-  integrity sha512-4LLfZYr5dRsobtC9JNkATL5OwOqrxs2tF29eNljjogxWXm4tlHxRo4dgOFTlWxQOxcj5Zv7dM8IMiSoOqMGy3g==
-
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"

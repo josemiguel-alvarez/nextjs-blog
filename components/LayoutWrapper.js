@@ -1,9 +1,9 @@
-import siteMetadata from "@/data/siteMetadata";
 import headerNavLinks from "@/data/headerNavLinks";
-import Link from "./Link";
-import SectionContainer from "./SectionContainer";
+import siteMetadata from "@/data/siteMetadata";
 import Footer from "./Footer";
+import Link from "./Link";
 import MobileNav from "./MobileNav";
+import SectionContainer from "./SectionContainer";
 import ThemeSwitch from "./ThemeSwitch";
 
 const LayoutWrapper = ({ children }) => {
@@ -30,7 +30,7 @@ const LayoutWrapper = ({ children }) => {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="rounded p-1 font-medium text-gray-900 hover:bg-neutral-800 dark:text-gray-100 sm:p-4"
+                  className="rounded p-1 font-medium text-gray-900 hover:bg-neutral-100 dark:text-gray-100 dark:hover:bg-neutral-800 sm:p-4"
                 >
                   {link.title}
                 </Link>
