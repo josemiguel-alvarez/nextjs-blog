@@ -1,0 +1,96 @@
+---
+title: "Automatically list your latest posts on your GitHub README"
+summary: "Using GitHub actions you can keep your GitHub README up to date with your latest posts on your blog very easy."
+date: "2022-07-19"
+tags: ["github"]
+draft: false
+---
+
+<TOCInline toc={props.toc} asDisclosure />
+
+If you have a blog like mine and a GitHub profile you can automatically list your latest posts on your GitHub README using a GitHub Action. The only requirement is to have a RSS feed of your blog. To see the final result, go to my [GitHub profile](https://github.com/josemiguel-alvarez) and check the section "Latest blog posts".
+
+The GitHub Action that we are going to use is [JasonEtco/rss-to-readme@v1](https://github.com/JasonEtco/rss-to-readme).
+
+## Setup
+
+The first step is to define the section where the posts are going to be listed in your README. This is how I've done it:
+
+```md
+## 📝 Latest blog posts
+
+<!--START_SECTION:feed-->
+
+...
+
+<!--END_SECTION:feed-->
+```
+
+Then, you have to add a .yml file like the following one in the directory `.github/workflows`. This is going to create a workflow in your repository.
+The workflow is set to be executed once a day at 8 AM. You can change it if you want.
+
+The only thing you have to change is the `feed-url` parameter. It has to be the URL of your RSS feed.
+
+```yaml:github-action.yml showLineNumbers
+name: Update this repo's README
+on:
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://www.jmalvarez.dev/feed.xml
+          readme-section: feed
+          empty-commits: false
+```
+
+If you want, you can specify a different template to render the list. To achieve this you only have to provide a Mustache template in the `template` parameter. For example:
+
+```yaml:github-action.yml {15} showLineNumbers
+name: Update this repo's README
+on:
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://www.jmalvarez.dev/feed.xml
+          readme-section: feed
+          empty-commits: false
+          template: "> {{ excerpt }}\n\n[Read more!]({{ url }})"
+```
+
+For further personalization check the resources list. I recommend reading the [rss-to-readme action documentation](https://github.com/JasonEtco/rss-to-readme) to see all the different options that the action offers.
+
+## Testing
+
+If you want to test it you can update the workflow to be executed on every push and you can also specify the branch where you are working. This way you can check the final result without updating the GitHub README that appears on your profile. In my case I was working on a branch called `add-github-action`.
+
+```yaml:github-action.yml {2, 11} showLineNumbers
+name: Update this repo's README
+on: [push]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://www.jmalvarez.dev/feed.xml
+          readme-section: feed
+          branch: add-github-action
+          empty-commits: false
+
+```
+
+## Resources
+
+- [RSS to README Action](https://github.com/JasonEtco/rss-to-readme)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
