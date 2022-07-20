@@ -10,7 +10,7 @@ const siteMetadata = {
   siteRepo: "https://github.com/josemiguel-alvarez/nextjs-blog",
   siteLogo: "/static/images/logo.png",
   image: "/static/images/avatar.png",
-  socialBanner: "/static/images/logo.png",
+  socialBanner: "/static/images/banner.png",
   email: "jm.alvarez.vano@gmail.com",
   github: "https://github.com/josemiguel-alvarez",
   twitter: "https://twitter.com/jmalvarez_dev",
