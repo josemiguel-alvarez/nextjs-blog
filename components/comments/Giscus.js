@@ -66,10 +66,10 @@ const Giscus = () => {
   }, [LoadComments]);
 
   useEffect(() => {
-    if (isVisible) {
+    if (isVisible && enableLoadComments) {
       LoadComments();
     }
-  }, [isVisible, LoadComments]);
+  }, [isVisible, LoadComments, enableLoadComments]);
 
   return (
     <div
