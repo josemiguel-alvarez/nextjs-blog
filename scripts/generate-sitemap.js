@@ -35,7 +35,7 @@ const siteMetadata = require("../data/siteMetadata");
                 }
                 const path = page
                   .replace("pages/", "/")
-                  .replace("data/blog", "/blog")
+                  .replace("data/blog", "/posts")
                   .replace("public/", "/")
                   .replace(".js", "")
                   .replace(".tsx", "")
@@ -46,7 +46,7 @@ const siteMetadata = require("../data/siteMetadata");
 
                 if (
                   page.search("pages/404.") > -1 ||
-                  page.search(`pages/blog/[...slug].`) > -1
+                  page.search(`pages/posts/[...slug].`) > -1
                 ) {
                   return;
                 }
