@@ -1,11 +1,15 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useTheme } from "next-themes";
 
 import siteMetadata from "@/data/siteMetadata";
+import { useOnScreen } from "@/components/hooks/useOnScreen";
 
 const Giscus = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true);
   const { theme, resolvedTheme } = useTheme();
+  const ref = useRef();
+  const isVisible = useOnScreen(ref);
+
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ""
       ? theme === "dark" || resolvedTheme === "dark"
@@ -62,11 +66,16 @@ const Giscus = () => {
   }, [LoadComments]);
 
   useEffect(() => {
-    LoadComments();
-  }, [LoadComments]);
+    if (isVisible) {
+      LoadComments();
+    }
+  }, [isVisible, LoadComments]);
 
   return (
-    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+    <div
+      ref={ref}
+      className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300"
+    >
       {enableLoadComments && (
         <button onClick={LoadComments}>Load Comments</button>
       )}
