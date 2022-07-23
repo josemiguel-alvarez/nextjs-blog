@@ -10,9 +10,8 @@ The blog posts are stored in `/data/blog` as Markdown files with front matter su
 
 ## Ideas for future development
 
-- Improve landing page
 - Fetch Twitter engagement data and display it in the post
-- Load comments when scrolling down
+- Add my professional experience in the "about" page
 
 ## Deployment
 
