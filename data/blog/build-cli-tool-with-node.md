@@ -5,6 +5,8 @@ date: "2022-07-21"
 tags: ["node", "javascript", "tools"]
 images: ["/static/images/nodejs.png"]
 draft: false
+urls:
+  ["https://dev.to/jmalvarez/get-started-building-cli-tools-with-nodejs-4eg7"]
 ---
 
 <TOCInline toc={props.toc} asDisclosure />

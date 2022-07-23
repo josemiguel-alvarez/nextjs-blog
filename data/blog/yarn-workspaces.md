@@ -4,6 +4,10 @@ summary: "A monorepo is a repository that contains multiple projects inside of i
 date: "2022-07-18"
 tags: ["yarn", "monorepo"]
 draft: false
+urls:
+  [
+    "https://dev.to/jmalvarez/introduction-to-monorepos-with-yarn-workspaces-262c",
+  ]
 ---
 
 <TOCInline toc={props.toc} asDisclosure />

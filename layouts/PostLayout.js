@@ -1,19 +1,24 @@
+import Comments from "@/components/comments";
+import Image from "@/components/Image";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
+import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import SectionContainer from "@/components/SectionContainer";
 import { BlogSEO } from "@/components/SEO";
-import Image from "@/components/Image";
 import Tag from "@/components/Tag";
 import siteMetadata from "@/data/siteMetadata";
-import Comments from "@/components/comments";
-import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 
 const editUrl = (fileName) =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`;
-const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.siteUrl}/posts/${slug}`
-  )}`;
+
+const discussUrl = (slug, urls) => {
+  let search = `${siteMetadata.siteUrl}/posts/${slug}`;
+  if (urls) {
+    search = `(${search} OR ${urls.join(" OR ")})`;
+  }
+
+  return `https://mobile.twitter.com/search?q=${encodeURIComponent(search)}`;
+};
 
 const postDateTemplate = {
   weekday: "long",
@@ -29,7 +34,7 @@ export default function PostLayout({
   prev,
   children,
 }) {
-  const { slug, fileName, date, title, images, tags } = frontMatter;
+  const { slug, fileName, date, title, tags, urls } = frontMatter;
 
   return (
     <SectionContainer>
@@ -113,7 +118,7 @@ export default function PostLayout({
                 {children}
               </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug)} rel="nofollow">
+                <Link href={discussUrl(slug, urls)} rel="nofollow">
                   {"Discuss on Twitter"}
                 </Link>
                 {` • `}
