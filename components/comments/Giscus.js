@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useTheme } from "next-themes";
+import { useCallback, useEffect, useRef, useState } from "react";
 
+import { useIsVisible } from "@/components/hooks/useIsVisible";
 import siteMetadata from "@/data/siteMetadata";
-import { useOnScreen } from "@/components/hooks/useOnScreen";
 
 const Giscus = () => {
   const [enableLoadComments, setEnabledLoadComments] = useState(true);
   const { theme, resolvedTheme } = useTheme();
   const ref = useRef();
-  const isVisible = useOnScreen(ref);
+  const isVisible = useIsVisible(ref);
 
   const commentsTheme =
     siteMetadata.comment.giscusConfig.themeURL === ""

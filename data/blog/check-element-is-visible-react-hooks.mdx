@@ -1,0 +1,97 @@
+---
+title: "Check if an element is visible with React hooks"
+summary: "Checking if an element is visible on the user screen is very easy using the Intersection Observer API. In this post we will create a custom hook that we can use in our React apps."
+date: "2022-07-23"
+tags: ["react", "react-hooks", "javascript"]
+images: ["/static/images/react-logo.png"]
+draft: false
+---
+
+Checking if an element is visible on the user screen is very easy using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This API is supported by all major browsers.
+
+The Intersection Observer API allows us to detect intersections of an element with another element. In our case we are going to observe for interceptions between a React element and the browser viewport.
+
+We are going to create a custom hook for this to reuse this code where we need it.
+
+In our custom hook we are going to to use `useState` to store the intersection status of the element.
+
+```jsx {2, 4} showLineNumbers
+export function useIsVisible() {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  return isIntersecting;
+}
+```
+
+The hook needs a reference to the React element that we want to observe. We are going to use the `ref` prop to pass the element to the hook.
+
+```jsx {1} showLineNumbers
+export function useIsVisible(ref) {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  return isIntersecting;
+}
+```
+
+Finally, we need to create an instance of `IntersectionObserver` and observe the element. The `IntersectionObserver` constructor accepts a callback function as first argument that is called when the element is intersecting with the viewport.
+
+We are going to use the `useEffect` hook to do this to avoid creating new observers on rerenders.
+
+```jsx {5, 6, 7, 9} showLineNumbers
+export function useIsVisible(ref) {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) =>
+      setIntersecting(entry.isIntersecting)
+    );
+
+    observer.observe(ref.current);
+  }, [ref]);
+
+  return isIntersecting;
+}
+```
+
+To improve performance, we are going to call [IntersectionObserver.disconnect()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/disconnect) to stop watching for changes when the component is unmounted or a new element is passed to the hook.
+
+```jsx {11} showLineNumbers
+export function useIsVisible(ref) {
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) =>
+      setIntersecting(entry.isIntersecting)
+    );
+
+    observer.observe(ref.current);
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
+
+  return isIntersecting;
+}
+```
+
+Our hook is ready to be used. To use it we only need to call it from a React component and pass a reference to the element that we want to check if it's visible or not.
+
+```jsx showLineNumbers
+export function MyComponent() {
+  const ref = useRef();
+  const isVisible = useIsVisible(ref);
+
+  return (
+    <div ref={ref}>
+      <p>{isVisible ? "Visible" : "Not visible"}</p>
+    </div>
+  );
+}
+```
+
+You can see a real usage example of this hook in my website. I'm using the hook to detect if the user scrolls to the bottom of the page and then load the comments of a blog post. You can see the source code of the component [here](https://github.com/josemiguel-alvarez/nextjs-blog/blob/main/components/comments/Giscus.js). Enter any of the blog posts and scroll to the bottom of the page to see it in action.
+
+### References
+
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+- [IntersectionObserver.disconnect()](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/disconnect)
