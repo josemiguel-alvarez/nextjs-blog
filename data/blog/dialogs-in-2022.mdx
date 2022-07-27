@@ -1,0 +1,95 @@
+---
+title: "Dialogs in 2022"
+summary: "Dialogs have always been difficult to manage. Modern browsers in 2022 offer a much simpler solution."
+date: "2022-07-27"
+tags: ["javascript", "dialogs", "html"]
+images: ["/static/images/js.png"]
+draft: false
+---
+
+import { Dialog } from "@/components/posts/dialogs-in-2022/dialog";
+
+<TOCInline toc={props.toc} asDisclosure />
+
+## Introducion to the `<dialog>` HTML element
+
+Dialogs are especially difficult to manage because there was no way to "hoist" your `<div>` to the top level of the page.
+In frameworks like React this can be solved using libraries which provide this functionality. However, we are still handling the problem to someone else and relying on their solution.
+
+The `<dialog>` HTML element simplifies our codebases and lets us focus on the important parts of our applications. [Safari](https://webkit.org/blog/12209/introducing-the-dialog-element/) and Firefox support `<dialog>` since March 2022. Chrome was already supporting it since 2014.
+
+Main advantages of the `<dialog>` element:
+
+- provides an easy way of creating dialogs and modals without external libraries
+- simplifies codebase and improves developer experience
+- automatically prevents access to the content behind the dialog
+- exists in a top layer above regular stacking context
+
+## How to use it
+
+Dialogs are very simple to use. First you need to render a `<dialog>` element with the content that you want to display.
+
+```html showLineNumbers
+<dialog>
+  <h1>Hello World</h1>
+  <p>This is a dialog</p>
+</dialog>
+```
+
+Apart from that, you only need to call `showModal()` on the `<dialog>` element to show it and `close` to close it. It's also possible to close the dialog pressing ESC. If you want, you can disable this behaviour with the `event.preventDefault()` function in the dialog's `close` event.
+
+## Simple HTML and JavaScript example
+
+In this example we are using plain HTML and JavaScript. You can see the example working in the [live demo](/static/examples/dialog-example.html).
+
+```html showLineNumbers
+<button id="openDialog">Open dialog</button>
+<dialog id="myDialog">
+  <h1>Hello World</h1>
+  <p>This is a dialog</p>
+  <button id="closeDialog">Close</button>
+</dialog>
+```
+
+```js showLineNumbers
+const myDialog = document.getElementById("myDialog");
+
+const openDialogButton = document.getElementById("openDialog");
+openDialogButton.addEventListener("click", () => {
+  myDialog.showModal();
+});
+
+const closeDialogButton = document.getElementById("closeDialog");
+closeDialogButton.addEventListener("click", () => {
+  myDialog.close();
+});
+```
+
+## React example
+
+In this example we are creating a React component to display the dialog.
+
+```jsx showLineNumbers
+import { useRef } from "react";
+
+export const Dialog = () => {
+  const myDialog = useRef();
+
+  return (
+    <div>
+      <button onClick={() => myDialog.current.showModal()}>Open dialog</button>
+      <dialog ref={myDialog}>
+        <div>
+          <p>Hello world!</p>
+          <p>Press ESC or click the button to close.</p>
+          <button onClick={() => myDialog.current.close()}>Close</button>
+        </div>
+      </dialog>
+    </div>
+  );
+};
+```
+
+You can see the React component in action clicking the following button.
+
+<Dialog />

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dialog example</title>
+  </head>
+
+  <body>
+    <button id="openDialog">Open dialog</button>
+    <dialog id="myDialog">
+      <h1>Hello World</h1>
+      <p>This is a dialog</p>
+      <button id="closeDialog">Close</button>
+    </dialog>
+
+    <script>
+      const myDialog = document.getElementById("myDialog");
+
+      const openDialogButton = document.getElementById("openDialog");
+      openDialogButton.addEventListener("click", () => {
+        myDialog.showModal();
+      });
+
+      const closeDialogButton = document.getElementById("closeDialog");
+      closeDialogButton.addEventListener("click", () => {
+        myDialog.close();
+      });
+    </script>
+  </body>
+</html>
