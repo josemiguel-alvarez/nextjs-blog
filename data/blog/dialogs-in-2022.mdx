@@ -2,18 +2,19 @@
 title: "Dialogs in 2022"
 summary: "Dialogs have always been difficult to manage. Modern browsers in 2022 offer a much simpler solution."
 date: "2022-07-27"
-tags: ["javascript", "dialogs", "html"]
-images: ["/static/images/js.png"]
+tags: ["html", "javascript", "dialogs"]
+images: ["/static/images/html.jpg"]
 draft: false
+urls: ["https://dev.to/jmalvarez/dialogs-in-2022-4glm"]
 ---
 
 import { Dialog } from "@/components/posts/dialogs-in-2022/dialog";
 
 <TOCInline toc={props.toc} asDisclosure />
 
-## Introducion to the `<dialog>` HTML element
+## Introduction to the `<dialog>` HTML element
 
-Dialogs are especially difficult to manage because there was no way to "hoist" your `<div>` to the top level of the page.
+Dialogs were especially difficult to manage because there was no way to "hoist" your `<div>` to the top level of the page.
 In frameworks like React this can be solved using libraries which provide this functionality. However, we are still handling the problem to someone else and relying on their solution.
 
 The `<dialog>` HTML element simplifies our codebases and lets us focus on the important parts of our applications. [Safari](https://webkit.org/blog/12209/introducing-the-dialog-element/) and Firefox support `<dialog>` since March 2022. Chrome was already supporting it since 2014.
@@ -40,7 +41,7 @@ Apart from that, you only need to call `showModal()` on the `<dialog>` element t
 
 ## Simple HTML and JavaScript example
 
-In this example we are using plain HTML and JavaScript. You can see the example working in the [live demo](/static/examples/dialog-example.html).
+In this example we are using plain HTML and JavaScript. You can see the example working in the [live demo](https://www.jmalvarez.dev/static/examples/dialog-example.html).
 
 ```html showLineNumbers
 <button id="openDialog">Open dialog</button>
