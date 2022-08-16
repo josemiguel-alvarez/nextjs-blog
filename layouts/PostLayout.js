@@ -1,4 +1,3 @@
-import Comments from "@/components/comments";
 import Image from "@/components/Image";
 import Link from "@/components/Link";
 import PageTitle from "@/components/PageTitle";
@@ -124,7 +123,6 @@ export default function PostLayout({
                 {` • `}
                 <Link href={editUrl(fileName)}>{"View on GitHub"}</Link>
               </div>
-              <Comments frontMatter={frontMatter} />
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
