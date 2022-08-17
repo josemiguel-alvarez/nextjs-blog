@@ -5,7 +5,8 @@ date: "2022-08-17"
 tags: ["typescript", "software-design", "solid-principles"]
 images: ["/static/images/ts.png"]
 draft: false
-urls: []
+urls:
+  ["https://dev.to/jmalvarez/single-responsibility-principle-in-typescript-859"]
 ---
 
 > A class should have just one reason to change.
