@@ -23,12 +23,12 @@ class Student {
   name: string;
   courseId: number;
   courseName: string;
-  courseSubject: string[];
+  courseSubjects: string[];
 
   // constructor
 
-  printCourseSchedule(): void {
-    // some API call here to get the course schedule
+  getCourseSubjects(): string {
+    return this.courseSubjects.join(", ");
   }
 }
 ```
@@ -51,8 +51,8 @@ class Course {
 
   // constructor
 
-  printSchedule(): void {
-    // some API call here to get the course schedule
+  getCourseSubjects(): string {
+    return this.subjects.join(", ");
   }
 }
 ```
