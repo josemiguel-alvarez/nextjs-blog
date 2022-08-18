@@ -10,7 +10,7 @@ urls: []
 
 > Classes should be open for extension but closed for modification.
 
-The idea behind this principle is that existing classes should extended but not modified. By modifying existing classes you risk breaking code which was already tested and reviewed.
+The idea behind this principle is that existing classes should be extended but not modified. By modifying existing classes you risk breaking code which was already tested and reviewed.
 
 The main benefit of this principle is that you can add new features without touching old code. This way you won't break the current usage of those original classes.
 
@@ -24,9 +24,21 @@ class Order {
 
   // constructor
 
+  getTotalCost(): number {
+    // calculates total cost
+  }
+
   getShippingCosts(): number {
-    if (this.shipping === "ground") return 5.95;
-    if (this.shipping === "air") return 10.95;
+    const totalCost = this.getTotalCost();
+
+    if (this.shipping === "ground") {
+      return totalCost > 50 ? 0 : 5.95;
+    }
+
+    if (this.shipping === "air") {
+      return 10.95;
+    }
+
     return 0;
   }
 }
@@ -40,26 +52,32 @@ class Order {
   items: string[];
   shipping: Shipping;
 
-  constructor(id: number, items: string[], shipping: Shipping) {
-    this.id = id;
-    this.items = items;
-    this.shipping = shipping;
+  // constructor
+
+  getTotalCost(): number {
+    // calculates total cost
   }
 }
 
 interface Shipping {
-  getShippingCosts(): number;
+  getShippingCosts(totalCost: number): number;
 }
 
 class Ground implements Shipping {
-  getShippingCosts(): number {
-    return 5.95;
+  getShippingCosts(totalCost: number): number {
+    return totalCost > 50 ? 0 : 5.95;
   }
 }
 
 class Air implements Shipping {
   getShippingCosts(): number {
     return 10.95;
+  }
+}
+
+class PickUpInStore implements Shipping {
+  getShippingCosts(): number {
+    return 0;
   }
 }
 ```
