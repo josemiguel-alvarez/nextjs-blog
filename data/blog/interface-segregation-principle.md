@@ -5,7 +5,10 @@ date: "2022-08-20"
 tags: ["typescript", "software-design", "solid-principles"]
 images: ["/static/images/ts.png"]
 draft: false
-urls: []
+urls:
+  [
+    "https://dev.to/jmalvarez/interface-segregation-principle-in-typescript-4dgb",
+  ]
 ---
 
 > Clients shouldn’t be forced to depend on methods they do not use.
@@ -18,7 +21,7 @@ Another advantage is that when we update an interface, the changes will affect l
 
 Remember that a class can implement multiple interfaces, so there is no need to include everything in just one interface.
 
-## Example
+---
 
 In the following bad example we have an interface for animals with 2 methods: walk and fly.
 

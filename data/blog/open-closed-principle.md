@@ -14,6 +14,8 @@ The idea behind this principle is that existing classes should be extended but n
 
 The main benefit of this principle is that you can add new features without touching old code. This way you won't break the current usage of those original classes.
 
+---
+
 In the following bad example we can see how the `Order` class is calculating shipping costs for each of the existing shipping methods.
 
 ```ts showLineNumbers

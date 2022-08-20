@@ -15,6 +15,8 @@ Every class in our code should be responsible for just a single part of the appl
 
 If a class is responsible of multiple parts of our app, it will have to be changed frequently. Therefore, changing one part of the class increases the risk of breaking other parts of itself. The solution is to divide it into multiple classes, each one with one responsibility.
 
+---
+
 In the following bad example we can see how the `Student` class has two responsibilities: managing the student data and the course data.
 
 ```ts showLineNumbers
