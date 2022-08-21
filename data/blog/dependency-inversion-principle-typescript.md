@@ -5,7 +5,8 @@ date: "2022-08-21"
 tags: ["typescript", "software-design", "solid-principles"]
 images: ["/static/images/ts.png"]
 draft: false
-urls: []
+urls:
+  ["https://dev.to/jmalvarez/dependency-inversion-principle-in-typescript-4nm0"]
 ---
 
 > Depend upon abstractions, not concretions.
