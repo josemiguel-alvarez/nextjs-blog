@@ -3,7 +3,7 @@ title: "Dependency Inversion Principle in TypeScript"
 summary: "Learn how to apply the Dependency Inversion Principle in TypeScript."
 date: "2022-08-21"
 tags: ["typescript", "software-design", "solid-principles"]
-images: ["/static/images/ts.png"]
+images: ["/static/images/dependency-inversion-principle-typescript.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/dependency-inversion-principle-in-typescript-4nm0"]

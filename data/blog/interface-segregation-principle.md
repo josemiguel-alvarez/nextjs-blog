@@ -3,7 +3,7 @@ title: "Interface Segregation Principle in TypeScript"
 summary: "Learn how to apply the Interface Segregation Principle in TypeScript."
 date: "2022-08-20"
 tags: ["typescript", "software-design", "solid-principles"]
-images: ["/static/images/ts.png"]
+images: ["/static/images/interface-segregation-principle.png"]
 draft: false
 urls:
   [

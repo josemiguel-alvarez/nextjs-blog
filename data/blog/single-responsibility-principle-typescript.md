@@ -3,7 +3,7 @@ title: "Single Responsibility Principle in TypeScript"
 summary: "Learn how to apply the Single Responsibility Principle in TypeScript."
 date: "2022-08-17"
 tags: ["typescript", "software-design", "solid-principles"]
-images: ["/static/images/ts.png"]
+images: ["/static/images/single-responsibility-principle-typescript.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/single-responsibility-principle-in-typescript-859"]

@@ -3,7 +3,7 @@ title: "Open/Closed Principle in TypeScript"
 summary: "Learn how to apply the Open/Closed Principle in TypeScript."
 date: "2022-08-18"
 tags: ["typescript", "software-design", "solid-principles"]
-images: ["/static/images/ts.png"]
+images: ["/static/images/open-closed-principle.png"]
 draft: false
 urls: ["https://dev.to/jmalvarez/openclosed-principle-in-typescript-749"]
 ---

@@ -3,7 +3,7 @@ title: "Liskov Substitution Principle in TypeScript"
 summary: "Learn how to apply the Liskov Substitution Principle in TypeScript."
 date: "2022-08-19"
 tags: ["typescript", "software-design", "solid-principles"]
-images: ["/static/images/ts.png"]
+images: ["/static/images/liskov-substitution-principle.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/liskov-substitution-principle-in-typescript-3i87"]
