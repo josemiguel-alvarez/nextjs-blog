@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
+  border: 2px dashed;
+  padding: 10px;
 }
 
 .HasPseudoClassExample > div {
@@ -23,4 +25,18 @@
 
 .HasPseudoClassExample img:not(:has(+ p)) {
   border-radius: 50%;
+}
+
+.has-not-supported {
+  background-color: rgb(255, 17, 17);
+  position: absolute;
+  width: auto;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+@supports selector(:has(img)) {
+  .has-not-supported {
+    display: none;
+  }
 }
