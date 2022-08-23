@@ -12,7 +12,7 @@ import { HasPseudoClassExample } from "@/components/posts/using-has-pseudo-class
 
 <TOCInline toc={props.toc} asDisclosure />
 
-## Description
+## Introduction
 
 Modern browsers have started to [support](https://caniuse.com/css-has) the `:has` pseudo-class. Safari supports it since March 2022 and Chrome just released a new version in August 2022 that supports it. In Firefox it can used enabling the `layout.css.has-selector.enabled` flag.
 
@@ -20,16 +20,16 @@ The `:has()` pseudo-class selector can be used as a parent selector. It is very 
 
 ## Example
 
-Let's see some examples of how the :has pseudo-class can be used. We have the following html structure:
+Let's see some examples of how the `:has` pseudo-class can be used. We have the following html structure:
 
 ```html showLineNumbers
 <div>
   <div>
-    <img src="/static/images/ocean.jpeg" />
+    <img src="ocean.jpeg" />
     <p>Image description.</p>
   </div>
   <div>
-    <img src="/static/images/html.jpg" />
+    <img src="html.jpg" />
   </div>
 </div>
 ```
@@ -72,7 +72,7 @@ img:not(:has(+ p)) {
 }
 ```
 
-You can see the final result below. Remember that only if you are using any of the browsers that already support the :has pseudo-class you will see the result.
+You can see the final result below. Remember that only if you are using any of the browsers that already supports the `:has` pseudo-class you will see the result.
 
 <HasPseudoClassExample />
 
