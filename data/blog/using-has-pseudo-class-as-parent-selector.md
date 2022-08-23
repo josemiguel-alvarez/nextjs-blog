@@ -5,7 +5,10 @@ date: "2022-08-23"
 tags: ["css"]
 images: ["/static/images/using-has-pseudo-class-as-parent-selector.png"]
 draft: false
-urls: []
+urls:
+  [
+    "https://dev.to/jmalvarez/using-the-new-has-pseudo-class-as-a-css-parent-selector-3bgh",
+  ]
 ---
 
 import { HasPseudoClassExample } from "@/components/posts/using-has-pseudo-class-as-parent-selector/example";
