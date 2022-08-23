@@ -1,0 +1,42 @@
+.HasPseudoClassExample {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border: 2px dashed;
+  padding: 10px;
+}
+
+.HasPseudoClassExample > div {
+  width: 50%;
+}
+
+.HasPseudoClassExample div:has(> img + p) {
+  border: 2px solid #000;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HasPseudoClassExample img:has(+ p) {
+  margin: 0;
+  border-radius: 5%;
+}
+
+.HasPseudoClassExample img:not(:has(+ p)) {
+  border-radius: 50%;
+}
+
+.has-not-supported {
+  background-color: rgb(255, 17, 17);
+  position: absolute;
+  width: auto;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+@supports selector(:has(img)) {
+  .has-not-supported {
+    display: none;
+  }
+}

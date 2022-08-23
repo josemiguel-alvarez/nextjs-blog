@@ -1,3 +1,4 @@
+import "@/css/has-pseudo-class.css";
 import "@/css/prism.css";
 import "@/css/tailwind.css";
 import "katex/dist/katex.css";
