@@ -3,7 +3,7 @@ title: "Testing implementation details"
 summary: "Developers test implementation details in the frontend very frequently. Why is this a bad idea?"
 date: "2022-08-30"
 tags: ["testing"]
-images: ["/static/images/___.png"]
+images: ["/static/images/testing-implementation-details.png.png"]
 draft: false
 urls: []
 ---
@@ -33,12 +33,11 @@ function add(total, quantity) {
 And then you have the following tests:
 
 ```js showLineNumbers
-it("returns the correct result", () => {
+test("returns the correct result", () => {
   expect(multiply(5, 3)).toEqual(15);
 });
 
-it("calls the add function the correct number of times", () => {
-  jest.spyOn(add);
+test("calls the add function the correct number of times", () => {
   multiply(5, 3);
   expect(add).toHaveBeenCalledTimes(3);
 });
