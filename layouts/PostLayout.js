@@ -10,10 +10,10 @@ import siteMetadata from "@/data/siteMetadata";
 const editUrl = (fileName) =>
   `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`;
 
-const discussUrl = (slug, urls) => {
+const discussUrl = (slug, dev_to) => {
   let search = `${siteMetadata.siteUrl}/posts/${slug}`;
-  if (urls) {
-    search = `(${search} OR ${urls.join(" OR ")})`;
+  if (dev_to) {
+    search = `(${search} OR ${dev_to})`;
   }
 
   return `https://mobile.twitter.com/search?q=${encodeURIComponent(search)}`;
@@ -33,7 +33,7 @@ export default function PostLayout({
   prev,
   children,
 }) {
-  const { slug, fileName, date, title, tags, urls } = frontMatter;
+  const { slug, fileName, date, title, tags, urls, dev_to } = frontMatter;
 
   return (
     <SectionContainer>
@@ -117,9 +117,17 @@ export default function PostLayout({
                 {children}
               </div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(slug, urls)} rel="nofollow">
+                <Link href={discussUrl(slug, dev_to)} rel="nofollow">
                   {"Discuss on Twitter"}
                 </Link>
+                {dev_to && (
+                  <>
+                    {` • `}
+                    <Link href={dev_to} rel="nofollow">
+                      {"View on dev.to"}
+                    </Link>
+                  </>
+                )}
                 {` • `}
                 <Link href={editUrl(fileName)}>{"View on GitHub"}</Link>
               </div>
