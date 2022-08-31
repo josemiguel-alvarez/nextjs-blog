@@ -3,7 +3,7 @@ title: "Testing implementation details"
 summary: "Developers test implementation details in the frontend very frequently. Why is this a bad idea?"
 date: "2022-08-30"
 tags: ["testing"]
-images: ["/static/images/testing-implementation-details.png.png"]
+images: ["/static/images/testing-implementation-details.png"]
 draft: false
 urls: []
 ---
