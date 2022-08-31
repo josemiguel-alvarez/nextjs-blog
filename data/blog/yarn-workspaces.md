@@ -8,6 +8,7 @@ urls:
   [
     "https://dev.to/jmalvarez/introduction-to-monorepos-with-yarn-workspaces-262c",
   ]
+dev_to: "https://dev.to/jmalvarez/introduction-to-monorepos-with-yarn-workspaces-262c"
 ---
 
 <TOCInline toc={props.toc} asDisclosure />

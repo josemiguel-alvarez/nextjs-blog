@@ -9,6 +9,7 @@ urls:
   [
     "https://dev.to/jmalvarez/using-the-new-has-pseudo-class-as-a-css-parent-selector-3bgh",
   ]
+dev_to: "https://dev.to/jmalvarez/using-the-new-has-pseudo-class-as-a-css-parent-selector-3bgh"
 ---
 
 import { HasPseudoClassExample } from "@/components/posts/using-has-pseudo-class-as-parent-selector/example";

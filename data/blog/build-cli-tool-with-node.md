@@ -7,6 +7,7 @@ images: ["/static/images/nodejs.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/get-started-building-cli-tools-with-nodejs-4eg7"]
+dev_to: "https://dev.to/jmalvarez/get-started-building-cli-tools-with-nodejs-4eg7"
 ---
 
 <TOCInline toc={props.toc} asDisclosure />

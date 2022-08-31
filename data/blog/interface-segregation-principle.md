@@ -9,6 +9,7 @@ urls:
   [
     "https://dev.to/jmalvarez/interface-segregation-principle-in-typescript-4dgb",
   ]
+dev_to: "https://dev.to/jmalvarez/interface-segregation-principle-in-typescript-4dgb"
 ---
 
 > Clients shouldn’t be forced to depend on methods they do not use.

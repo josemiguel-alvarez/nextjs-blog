@@ -7,6 +7,7 @@ images: ["/static/images/dependency-inversion-principle-typescript.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/dependency-inversion-principle-in-typescript-4nm0"]
+dev_to: "https://dev.to/jmalvarez/dependency-inversion-principle-in-typescript-4nm0"
 ---
 
 > Depend upon abstractions, not concretions.
