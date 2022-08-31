@@ -5,7 +5,8 @@ date: "2022-08-30"
 tags: ["testing"]
 images: ["/static/images/testing-implementation-details.png"]
 draft: false
-urls: []
+urls: ["https://dev.to/jmalvarez/testing-implementation-details-gkg"]
+dev_to: "https://dev.to/jmalvarez/testing-implementation-details-gkg"
 ---
 
 I see developers testing implementation details in the frontend very frequently. **Why is this a bad idea?**

@@ -33,7 +33,7 @@ export default function PostLayout({
   prev,
   children,
 }) {
-  const { slug, fileName, date, title, tags, urls } = frontMatter;
+  const { slug, fileName, date, title, tags, urls, dev_to } = frontMatter;
 
   return (
     <SectionContainer>
@@ -120,6 +120,14 @@ export default function PostLayout({
                 <Link href={discussUrl(slug, urls)} rel="nofollow">
                   {"Discuss on Twitter"}
                 </Link>
+                {dev_to && (
+                  <>
+                    {` • `}
+                    <Link href={dev_to} rel="nofollow">
+                      {"View on dev.to"}
+                    </Link>
+                  </>
+                )}
                 {` • `}
                 <Link href={editUrl(fileName)}>{"View on GitHub"}</Link>
               </div>

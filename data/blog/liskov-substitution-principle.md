@@ -7,6 +7,7 @@ images: ["/static/images/liskov-substitution-principle.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/liskov-substitution-principle-in-typescript-3i87"]
+dev_to: "https://dev.to/jmalvarez/liskov-substitution-principle-in-typescript-3i87"
 ---
 
 > When extending a class, remember that you should be able to pass objects of the subclass in place of objects of the parent class without breaking the client code.

@@ -6,6 +6,7 @@ tags: ["typescript", "software-design", "solid-principles"]
 images: ["/static/images/open-closed-principle.png"]
 draft: false
 urls: ["https://dev.to/jmalvarez/openclosed-principle-in-typescript-749"]
+dev_to: "https://dev.to/jmalvarez/openclosed-principle-in-typescript-749"
 ---
 
 > Classes should be open for extension but closed for modification.

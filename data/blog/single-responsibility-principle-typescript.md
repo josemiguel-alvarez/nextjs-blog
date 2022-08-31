@@ -7,6 +7,7 @@ images: ["/static/images/single-responsibility-principle-typescript.png"]
 draft: false
 urls:
   ["https://dev.to/jmalvarez/single-responsibility-principle-in-typescript-859"]
+dev_to: "https://dev.to/jmalvarez/single-responsibility-principle-in-typescript-859"
 ---
 
 > A class should have just one reason to change.
