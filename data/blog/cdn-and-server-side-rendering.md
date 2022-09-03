@@ -5,8 +5,11 @@ date: "2022-09-04"
 tags: ["static-site-generation", "server-side-rendering", "cdn", "cache"]
 images: ["/static/images/cdn-and-server-side-rendering.png"]
 draft: false
-urls: []
-dev_to: ""
+urls:
+  [
+    "https://dev.to/jmalvarez/cdn-caching-static-site-generation-and-server-side-rendering-4hom",
+  ]
+dev_to: "https://dev.to/jmalvarez/cdn-caching-static-site-generation-and-server-side-rendering-4hom"
 ---
 
 <TOCInline toc={props.toc} asDisclosure />
