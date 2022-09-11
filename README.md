@@ -1,3 +1,5 @@
+The website is now built using [remix](https://remix.run/) -> https://github.com/josemiguel-alvarez/remix-blog
+
 <h1 align="center" id="title">jmalvarez.dev</h1>
 
 <p align="center"><img src="https://img.shields.io/github/license/josemiguel-alvarez/nextjs-blog" alt="shields"> <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fjosemiguel-alvarez%2Fnextjs-blog" alt="shields"> <img src="https://img.shields.io/github/checks-status/josemiguel-alvarez/nextjs-blog/main" alt="shields"><img src="https://img.shields.io/github/workflow/status/josemiguel-alvarez/nextjs-blog/CodeQL" alt="shields"></p>
